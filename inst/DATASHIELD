@@ -1,0 +1,17 @@
+AssignMethods:
+    selectDS,
+    renameDS,
+    mutateDS,
+    ifElseDS,
+    bindRowsDS,
+    bindColsDS,
+    caseWhenDS,
+    filterDS,
+    sliceDS,
+    arrangeDS,
+    groupByDS,
+    ungroupDS,
+    distinctDS,
+    asTibbleDS
+AggregateMethods:
+    groupKeysDS

@@ -10,6 +10,20 @@ login_data <- .prepare_dslite("mutateDS", NULL, list(mtcars = mtcars))
 conns <- datashield.login(logins = login_data)
 datashield.assign.table(conns, "mtcars", "mtcars")
 
+options(
+  datashield.privacyControlLevel = "banana",
+  nfilter.tab = 3,
+  nfilter.subset = 3,
+  nfilter.glm = 0.33,
+  nfilter.string = 80,
+  nfilter.stringShort = 20,
+  nfilter.kNN = 3,
+  nfilter.levels.density = 0.33,
+  nfilter.levels.max = 40,
+  nfilter.noise = 0.25,
+  nfilter.privacy.old = 5
+)
+
 good_mutate_arg <- "mpg_trans = cyl*1000, new_var = (hp-drat)/qsec"
 # good_mutate_arg_enc <- .encode_tidy_eval(good_mutate_arg, .get_encode_dictionary())
 
@@ -87,3 +101,51 @@ test_that("mutateDS passes when called directly", {
     143.09
   )
 })
+
+test_that("mutateDS doesn't work with banned function calls that could create a vector", {
+  banned_arg_1 <- "banned = row_number()"
+  expect_error(
+    .check_tidy_disclosure("mtcars", banned_arg_1),
+    "`row_number` is not a permitted function")
+
+  banned_arg_2 <- "banned = seq(1, 32, 1)"
+  expect_error(
+    .check_tidy_disclosure("mtcars", banned_arg_2),
+    "`seq` is not a permitted function")
+
+  banned_arg_3 <- "banned = rep(1, 32)"
+  expect_error(
+    .check_tidy_disclosure("mtcars", banned_arg_3),
+    "`rep` is not a permitted function")
+})
+
+test_that(".check_mutate_disclosure blocks the use of ':'", {
+  banned_arg_4 <- "banned = 1:32"
+  expect_error(
+    .check_mutate_disclosure(banned_arg_4),
+    "It is not permitted to use the character ':' within ds.mutate."
+  )
+})
+
+test_that(".check_mutate_disclosure blocks the use of 'c'", {
+  banned_arg_5 <- "banned = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32)"
+  expect_error(
+    .check_mutate_disclosure(banned_arg_5),
+    "It is not permitted to use the character 'c\\(' within ds.mutate")
+})
+
+test_that(".check_mutate_disclosure blocks the use of both 'c' and ':'", {
+  banned_arg_6 <- "banned = c(1, 2, 3) + 1:32"
+  expect_error(
+    .check_mutate_disclosure(banned_arg_6),
+    "It is not permitted to use the characters 'c\\( and :' within ds.mutate")
+})
+
+test_that(".check_mutate_disclosure doesn't block permitted strings", {
+  good_arg_1 <- "ok^2"
+  expect_silent(
+    .check_mutate_disclosure(good_arg_1)
+  )
+})
+
+

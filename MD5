@@ -1,4 +1,4 @@
-16289cf68e782732f6fdd7a9f212cce7 *DESCRIPTION
+a4f6b9a55cffc3dbf99b7d15badb3bda *DESCRIPTION
 7cd88512badb99859958f4bc798b9116 *NAMESPACE
 b7811b3f8a01b5157276d3a44bf73971 *NEWS.md
 de1f9e7ca138a118e0cfcae9dfefb67e *R/arrangeDS.R
@@ -15,9 +15,12 @@ b9a19f42d75cae14ede5a02ec8daeb63 *R/groupByDS.R
 a83726b6eb34d583022dfc1913722e1a *R/renameDS.R
 55b83fc22adb8e469e8aefe248c3f46c *R/selectDS.R
 4b9c337cf8919e0b08bd606331dd0f2d *R/sliceDS.R
-d5f2409e5ff6819ab148f40e168ee25f *R/utils.R
-e7a722ea98c31be732b3919d469233b9 *README.md
+7eb5a89cc3674393413084918d40c31d *R/utils.R
+6e301c69206a8a59aed54d61100acd03 *README.md
+a5bddadf125341197850655b798faa15 *build/vignette.rds
 41f92ffe789d24d8a5c26233b4c26e5a *inst/DATASHIELD
+37ab242da04666d125391f10986c98e4 *inst/doc/tidyversePrivacy.Rmd
+a27fb36f54b8e1b6463f818c371b788c *inst/doc/tidyversePrivacy.html
 cdffecdd26ed064032487e8a1fd8bb62 *man/arrangeDS.Rd
 12b638fafa76dcadbc228d07f801a30f *man/asTibbleDS.Rd
 1cc6795083e935fc0298a241e8b08c8c *man/bindColsDS.Rd
@@ -36,14 +39,14 @@ a6b8c7a5d2a5185a2fc4b65321291230 *man/mutateDS.Rd
 d9975e6e7165772b2ebde44fa1cafc2b *man/sliceDS.Rd
 7e9f8dac5f4b2e66588940699c6975d0 *man/ungroupDS.Rd
 86fd6c07155a66ad085a8c6ec6a68827 *tests/testthat.R
-4c4495b4aa3d318081371db8e3f6c010 *tests/testthat/_snaps/utils.md
+3416abe1afa674840dd15d24d8e6df1a *tests/testthat/_snaps/utils.md
 77a24e5c72d5d613ffb597054a9b7e97 *tests/testthat/helpers.R
 b560d341ac0c4d757931195affaa01c7 *tests/testthat/test-arrangeDS.R
 ba3fc4d65937d7f27ef7f2a3a6fc46cf *tests/testthat/test-asTibbleDS.R
 e2b66e1fb00530f41833d118f7c2da04 *tests/testthat/test-bindColsDS.R
 c43bc27c415b4d0336e168f2f1581860 *tests/testthat/test-bind_rowsDS.R
 dcafb4f6de4c7b4e3f222ea8c33c29cf *tests/testthat/test-case_whenDS.R
-79eb7616e753858fcd8d7a1bc94de68a *tests/testthat/test-distinctDS.R
+8770b103630b6f00a2d721b7c2288f3c *tests/testthat/test-distinctDS.R
 66d169734b33f060093fc0875a153d8b *tests/testthat/test-filterDS.R
 33b52e20c43adc45d39328267c3ec54f *tests/testthat/test-groupByDS.R
 c7a1bf5520e0b9d79fe49a24625060e1 *tests/testthat/test-groupKeys.R
@@ -52,4 +55,7 @@ cd12243e7e9f9a4df24cfc629d708666 *tests/testthat/test-mutateDS.R
 b688b49eb2b7a9cc5fba178d8f56919d *tests/testthat/test-renameDS.R
 a9c6ab26f926b520df2575354d21c848 *tests/testthat/test-selectDS.R
 a90b14f46b4a4b8dc6c15a241b25066e *tests/testthat/test-sliceDS.R
-1ec9019a1a99e626bd64b49a714e9271 *tests/testthat/test-utils.R
+6c161bf38ac35a4712ef027a2de2364c *tests/testthat/test-utils.R
+82ca462ca96bb600e97a43b2f81b133d *vignettes/pre-render.R
+37ab242da04666d125391f10986c98e4 *vignettes/tidyversePrivacy.Rmd
+37ab242da04666d125391f10986c98e4 *vignettes/tidyversePrivacy.Rmd.orig

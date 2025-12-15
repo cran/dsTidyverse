@@ -5,7 +5,7 @@
 [![codecov](https://codecov.io/gh/molgenis/ds-tidyverse/branch/master/graph/badge.svg?token=ITPMERAWYI)](https://app.codecov.io/gh/molgenis/ds-tidyverse)
 <!-- badges: end -->
 
-This is the DataSHIELD implementation of selected [Tidyverse](https://www.tidyverse.org/) functions. 
+This is the DataSHIELD implementation of selected [Tidyverse](https://tidyverse.org/) functions. 
 Currently most of these functions are from dplyr, however in the future functions from other
 Tidyverse packages can be included.
 
@@ -34,28 +34,8 @@ Tidyverse packages can be included.
 ### From the `tibble` package:
 - **`as_tibble`**: Convert data to a tibble.
 
-## Privacy control levels
-DataSHIELD implements [privacy control levels](https://wiki.datashield.org/en/opmanag/privacy-control-level), which allows data owners to control which functions can be
-used by researchers. The table below shows which dsTidyverse functions are permitted in which
-privacy mode.
-
-| **Function**       | **Permissive** | **Banana** | **Avocado** | **Non-Permissive** |
-|------------------|-------------|---------|---------|---------------|
-| `arrangeDS` | ✔ | ✔ |  |  |
-| `asTibbleDS` | ✔ | ✔ | ✔  | ✔ |
-| `bindColsDS` | ✔ | ✔ |  |  |
-| `bindRowsDS` | ✔ | ✔ |  |  |
-| `caseWhenDS` | ✔ | ✔ |  |  |
-| `distinctDS` | ✔ | ✔ | ✔  | ✔ |
-| `filterDS` | ✔ | ✔ |  |  |
-| `groupByDS` | ✔ | ✔ |  |  |
-| `groupKeysDS` | ✔ | ✔ |  |  |
-| `mutateDS` | ✔ | ✔  |  |  |
-| `renameDS` | ✔ | ✔ | ✔  | ✔ |
-| `selectDS` | ✔ | ✔ | ✔  | ✔ |
-| `sliceDS` | ✔ | ✔ |  |  |
-| `ungroupDS` | ✔ | ✔ |  |  |
-
+## Privacy settings with dsTidyverse
+Please read the separate article **Privacy settings with dsTidyverse** for detailed instructions on managing privacy within dsTidyverse.
 
 ## Contributing
 If there are functions in this list you would like implemented, please either attempt to do so 

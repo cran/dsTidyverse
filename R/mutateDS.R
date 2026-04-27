@@ -1,5 +1,5 @@
 #' @title Create, modify, and delete columns
-#' @description DataSHIELD implentation of \code{mutate}.
+#' @description DataSHIELD implementation of \code{mutate}.
 #' @param df.name A data frame, data frame extension (e.g. a tibble), or a lazy data frame (e.g. from dbplyr or dtplyr).
 #' @param tidy_expr Name-value pairs. The name gives the name of the column in the output.
 #' @param .keep .keep Control which columns from \code{df.name} are retained in the output. Grouping
@@ -37,7 +37,7 @@ mutateDS <- function(tidy_expr, df.name, .keep = NULL, .before = NULL, .after = 
 #' @keywords internal
 #' @noRd
 .check_mutate_disclosure <- function(tidy_expr){
-  matches <- regmatches(tidy_expr, gregexpr("(:|c\\()", tidy_expr))[[1]]
+  matches <- regmatches(tidy_expr, gregexpr("(:|(?<![A-Za-z0-9_.])c\\()", tidy_expr, perl = TRUE))[[1]]
   if (length(matches) > 0) {
     cli_abort(
       c(
